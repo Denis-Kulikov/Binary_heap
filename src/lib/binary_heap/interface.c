@@ -1,5 +1,17 @@
 #include "lib_heap.h"
 
+int checking_max_heap_property (struct binary_heap heap)
+{
+    for (int i = 0; i < heap.n; i++)
+    {
+        if ((   (heap.nodes[i].key < heap.nodes[i * 2 + 1].key) && (i * 2 + 1) < heap.n)
+            || ((heap.nodes[i].key < heap.nodes[i * 2 + 2].key) && (i * 2 + 2) < heap.n))
+            return 1;
+    }
+
+    return 0;
+}
+
 int heap_increase_key (struct binary_heap_nodes *nodes, int index, int key)
 {
     if (nodes[index].key > key)
@@ -108,7 +120,7 @@ int heap_free (struct binary_heap *heap)
 
 int heap_init (struct binary_heap *heap, size_t size)
 {
-    heap->m = size;
+    heap->m = size - 1;
     heap->n = 0;
     heap->nodes = malloc(sizeof(struct binary_heap_nodes) * size);
     if (heap->nodes == NULL)

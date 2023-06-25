@@ -28,6 +28,7 @@ struct binary_heap
         b = temp;                           \
     }
 
+int checking_max_heap_property (struct binary_heap heap);
 int heap_increase_key (struct binary_heap_nodes *nodes, int index, int key);
 void heapifydown (struct binary_heap_nodes *nodes, int index, int n);
 struct binary_heap_nodes* heap_delete_max (struct binary_heap *heap);
