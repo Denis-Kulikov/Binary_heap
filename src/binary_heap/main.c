@@ -5,5 +5,7 @@
 
 int main ()
 {
+    binary_heap_test (10);
+
     return 0;
 }
