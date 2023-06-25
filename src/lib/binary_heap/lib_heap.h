@@ -2,8 +2,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "../src/lib/lib.h"
+
+#define HEAP_EMPTY NULL
 
 struct binary_heap_node
 {
@@ -25,6 +28,8 @@ struct binary_heap
         b = temp;                           \
     }
 
+void heap_print_max (struct binary_heap heap);
+struct binary_heap_node* heap_max (struct binary_heap heap);
 void heap_print (struct binary_heap heap);
 void heapifyup (struct binary_heap_node *nodes, int index);
 int heap_insert (struct binary_heap *heap, int key, int value);

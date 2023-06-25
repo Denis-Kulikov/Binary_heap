@@ -1,5 +1,25 @@
 #include "lib_heap.h"
 
+
+void heap_print_max (struct binary_heap heap)
+{
+    struct binary_heap_node *nodes;
+    nodes = heap_max (heap);
+    if (nodes != NULL)
+        printf("\nKey = %d\nValue = %d\n", nodes->key, nodes->value);
+    else
+        printf("\nНет узлов\n");
+}
+
+
+struct binary_heap_node* heap_max (struct binary_heap heap)
+{
+    if (heap.n == 0)
+        return HEAP_EMPTY;
+    
+    return &heap.nodes[0];
+}
+
 void heap_print (struct binary_heap heap)
 {
     printf("\nHeap: ");
