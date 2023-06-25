@@ -25,6 +25,7 @@ struct binary_heap
         b = temp;                           \
     }
 
+void heap_print (struct binary_heap heap);
 void heapifyup (struct binary_heap_node *nodes, int index);
 int heap_insert (struct binary_heap *heap, int key, int value);
 int heap_init (struct binary_heap *heap, size_t size);
