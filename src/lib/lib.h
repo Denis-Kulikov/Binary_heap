@@ -1,3 +1,7 @@
-#include "../lib/binary_heap/binary_heap_test.c"
+enum ERRORS
+{
+    HEAP_OVERFLOW = 1,
+    HEAP_INVALID_KEY,
+};
 
 int binary_heap_test ();
