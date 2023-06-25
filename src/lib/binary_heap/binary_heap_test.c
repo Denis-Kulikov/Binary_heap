@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int binary_heap_test ()
+#include "lib_heap.h"
+
+int binary_heap_test (size_t size)
 {
-    return 1;
+    struct binary_heap haep;
+    heap_init (&haep, size);
+
+
+    return 0;
 }
