@@ -13,24 +13,17 @@ int heap_increase_key (struct binary_heap_nodes *nodes, int index, int key)
 
 void heapifydown (struct binary_heap_nodes *nodes, int index, int n)
 {
-    // struct binary_heap_nodes *largest;
     int largest;
     n--;
 
     while (index < n)
     {
-        // largest = &nodes[index];
         largest = index;
         if ((index * 2 + 1 <= n) && (nodes[index * 2 + 1].key > nodes[largest].key)) // левый потомок
-        {
-            // largest = &nodes[index * 2 + 1];
             largest = index * 2 + 1;
-        }
+            
         if ((index * 2 + 2 <= n) && (nodes[index * 2 + 2].key > nodes[largest].key)) // правый
-        {
-            // largest = &nodes[index * 2 + 2];
             largest = index * 2 + 2;
-        }
 
         if (&nodes[largest] == &nodes[index])
             break;
@@ -104,6 +97,14 @@ int heap_insert (struct binary_heap *heap, int key, int value)
     return 0;
 }
 
+int heap_free (struct binary_heap *heap)
+{
+    if (heap == NULL || heap->nodes == NULL)
+        return 1;
+    free(heap->nodes);
+
+    return 0;
+}
 
 int heap_init (struct binary_heap *heap, size_t size)
 {

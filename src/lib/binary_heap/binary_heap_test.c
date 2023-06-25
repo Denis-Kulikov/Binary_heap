@@ -17,6 +17,7 @@ int binary_heap_test (size_t size)
     heap_increase_key (heap.nodes, 7, 666);
     // heap_delete_max (&heap);
     heap_print (heap);
+    heap_free (&heap);
 
     return 0;
 }

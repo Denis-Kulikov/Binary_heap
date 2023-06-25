@@ -36,4 +36,5 @@ struct binary_heap_nodes* heap_max (struct binary_heap heap);
 void heap_print (struct binary_heap heap);
 void heapifyup (struct binary_heap_nodes *nodes, int index);
 int heap_insert (struct binary_heap *heap, int key, int value);
+int heap_free (struct binary_heap *heap);
 int heap_init (struct binary_heap *heap, size_t size);
