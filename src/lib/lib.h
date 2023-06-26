@@ -10,3 +10,7 @@ enum ERRORS
 };
 
 int binary_heap_test ();
+int tournament_sort_test ();
+int tournament_sort_test_time ();
+int merge_array_test ();
+int merge_array_test_time ();

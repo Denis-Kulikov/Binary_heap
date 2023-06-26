@@ -108,53 +108,6 @@ int get_winner_(int* tree, int size)
     return winner;
 }
 
-int** create_arrays()
-{
-    int **Arrays;
-    Arrays = malloc(sizeof(int*) * ARRAY_NUMBER);
-
-    *(Arrays) = (int*)ARRAY_NUMBER;
-
-    for (int i = 1; i <= ARRAY_NUMBER; i++) {
-        *(Arrays + i) = malloc(sizeof(int*) * SIZE_A + 1);
-        **(Arrays + i) = SIZE_A;
-        for (long int j = 1; j <= (long int)*(*(Arrays + i)); j++) 
-            *(*(Arrays + i) + j) = rand() % MAX_VALUE;
-    }
-        
-    return Arrays;
-}
-
-int** create_arrays_()
-{
-    int **Arrays;
-    Arrays = malloc(sizeof(int*) * 4);
-
-    *(Arrays) = (int*)3;
-
-    *(Arrays + 1) = malloc(sizeof(int*) * 4);
-    **(Arrays + 1) = 4;
-
-    *(Arrays + 2) = malloc(sizeof(int*) * 2);
-    **(Arrays + 2) = 2;
-
-    *(Arrays + 3) = malloc(sizeof(int*) * 3);
-    **(Arrays + 3) = 3;
-
-    for (long int i = 1; i <= (long int)*Arrays; i++) 
-        for (long int j = 1; j <= (long int)*(*(Arrays + i)); j++) 
-            *(*(Arrays + i) + j) = rand() % MAX_VALUE;
-
-    for (long int i = 1; i <= (long int)*Arrays; i++) {
-        printf("Array %ld: ", i);
-        for (int j = 1; j <= *(*(Arrays + i)); j++) 
-            printf("%d ", *(*(Arrays + i) + j));
-        printf("\n");
-    }
-        
-    return Arrays;
-}
-
 int tournament_sort(int* arr)
 {
     int *tree, number_leaf  = 1, size = 0, *pos = 0, index = *arr, winner;

@@ -3,7 +3,7 @@
 int tournament_sort_test_time ()
 {
     int *array;
-    size_t size = 100000;
+    size_t size = 25000;
     double start;
     
     printf("\nЧисло элементов / время работы\n");
