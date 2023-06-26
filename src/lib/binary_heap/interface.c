@@ -47,11 +47,15 @@ void heapifydown (struct binary_heap_nodes *nodes, int index, int n)
 
 struct binary_heap_nodes* heap_delete_max (struct binary_heap *heap)
 {
-    struct binary_heap_nodes *max;
+    struct binary_heap_nodes *max = malloc(sizeof(struct binary_heap_nodes));
 
     if (heap->m == 0)
+    {
+        free(max);
         return HEAP_EMPTY;
-    max = &heap->nodes[0];
+    }
+    max->key = heap->nodes[0].key;
+    max->value = heap->nodes[0].value;
     heap->n -= 1;
     heap->nodes[0] = heap->nodes[heap->n];
     heapifydown(heap->nodes, 0, heap->n);
@@ -79,7 +83,7 @@ struct binary_heap_nodes* heap_max (struct binary_heap heap)
 
 void heap_print (struct binary_heap heap)
 {
-    printf("\nHeap: ");
+    printf("Heap: ");
     for (int i = 0; i < heap.n; i++)
         printf("%d ", heap.nodes[i].key);
     printf("\n");
