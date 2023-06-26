@@ -21,7 +21,6 @@ int merge_array_test_time ()
     return 0;
 }
 
-
 int merge_array_test ()
 {
     int **Arrays = create_arrays_(), *array;
