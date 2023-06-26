@@ -1,1 +1,1 @@
-# binary_tree
+# binary_heap
